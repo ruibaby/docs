@@ -68,7 +68,7 @@ import DockerArgs from "./slots/docker-args.md"
         networks:
           halo_network:
         volumes:
-          - ./:/root/.halo2
+          - ./halo2:/root/.halo2
         ports:
           - "8090:8090"
         healthcheck:
@@ -86,7 +86,7 @@ import DockerArgs from "./slots/docker-args.md"
           # 外部访问地址，请根据实际需要修改
           - --halo.external-url=http://localhost:8090/
       halodb:
-        image: postgres:latest
+        image: postgres:15.4
         container_name: halodb
         restart: on-failure:3
         networks:
@@ -126,7 +126,7 @@ import DockerArgs from "./slots/docker-args.md"
         networks:
           halo_network:
         volumes:
-          - ./:/root/.halo2
+          - ./halo2:/root/.halo2
         ports:
           - "8090:8090"
         healthcheck:
@@ -145,13 +145,13 @@ import DockerArgs from "./slots/docker-args.md"
           - --halo.external-url=http://localhost:8090/
 
       halodb:
-        image: mysql:8.0.31
+        image: mysql:8.1.0
         container_name: halodb
         restart: on-failure:3
         networks:
           halo_network:
         command: 
-          - --default-authentication-plugin=mysql_native_password
+          - --default-authentication-plugin=caching_sha2_password
           - --character-set-server=utf8mb4
           - --collation-server=utf8mb4_general_ci
           - --explicit_defaults_for_timestamp=true
@@ -185,7 +185,7 @@ import DockerArgs from "./slots/docker-args.md"
         container_name: halo
         restart: on-failure:3
         volumes:
-          - ./:/root/.halo2
+          - ./halo2:/root/.halo2
         ports:
           - "8090:8090"
         healthcheck:
@@ -210,7 +210,7 @@ import DockerArgs from "./slots/docker-args.md"
         restart: on-failure:3
         network_mode: "host"
         volumes:
-          - ./:/root/.halo2
+          - ./halo2:/root/.halo2
         command:
           # 修改为自己已有的 MySQL 配置
           - --spring.r2dbc.url=r2dbc:pool:mysql://localhost:3306/halo
@@ -342,7 +342,7 @@ services:
     container_name: halo
     restart: on-failure:3
     volumes:
-      - ./:/root/.halo2
+      - ./halo2:/root/.halo2
     networks:
       - traefik
       - halo
