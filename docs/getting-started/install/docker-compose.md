@@ -247,21 +247,8 @@ import DockerArgs from "./slots/docker-args.md"
 
 ## 更新容器组
 
-1. 停止运行中的容器组
-
-  ```bash
-  cd ~/halo && docker-compose down
-  ```
-
-2. 备份数据（重要）
-
-  ```bash
-  cp -r ~/halo ~/halo.archive
-  ```
-
-  > 需要注意的是，`halo.archive` 文件名不一定要根据此文档命名，这里仅仅是个示例。
-
-3. 更新 Halo 服务
+1. 备份数据，可以参考 [备份与恢复](../../user-guide/backup.md) 进行完整备份。
+2. 更新 Halo 服务
 
   修改 `docker-compose.yaml` 中配置的镜像版本。
 
@@ -273,10 +260,6 @@ import DockerArgs from "./slots/docker-args.md"
   ```
 
   ```bash
-  docker-compose pull halo
-  ```
-
-  ```bash
   docker-compose up -d
   ```
 
@@ -284,9 +267,8 @@ import DockerArgs from "./slots/docker-args.md"
 
 你可以在下面的反向代理软件中任选一项，我们假设你已经安装好了其中一项，并对其的基本操作有一定了解。 如果你对它们没有任何了解，可以参考我们更为详细的反向代理文档：
 
-1. 使用 [OneinStack](../install/other/oneinstack.md)
-2. 使用 [Nginx Proxy Manager](../install/other/nginxproxymanager.md)
-3. 使用 [Traefik](../install/other/traefik.md)
+1. 使用 [Nginx Proxy Manager](../install/other/nginxproxymanager.md)
+2. 使用 [Traefik](../install/other/traefik.md)
 
 ### Nginx
 
