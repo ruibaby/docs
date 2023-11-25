@@ -9,8 +9,8 @@ import DockerArgs from "./slots/docker-args.md"
 在继续操作之前，我们推荐您先阅读[《写在前面》](../prepare)，这可以快速帮助你了解 Halo。
 :::
 
-:::tip
-此文档仅提供使用默认 H2 数据库的 Docker 运行方式，主要用于体验和测试，在生产环境我们不推荐使用 H2 数据库。
+:::caution
+此文档仅提供使用默认 H2 数据库的 Docker 运行方式，主要用于体验和测试，在生产环境我们不推荐使用 H2 数据库，这可能因为操作不当导致数据文件损坏。如果因为某些原因（如内存不足以运行独立数据库）必须要使用，建议按时[备份数据](../../user-guide/backup.md)。
 
 如果需要使用其他数据库部署，我们推荐使用 Docker Compose 部署：[使用 Docker Compose 部署](./docker-compose)
 :::
@@ -55,7 +55,7 @@ import DockerArgs from "./slots/docker-args.md"
     - **-p**：端口映射，格式为 `主机(宿主)端口:容器端口` ，可在 `application.yaml` 配置。
     - **-v**：工作目录映射。形式为：`-v 宿主机路径:/root/.halo2`，后者不能修改。
 
-    变量详解：
+    运行参数详解：
 
     <DockerArgs />
 
