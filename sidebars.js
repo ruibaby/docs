@@ -172,6 +172,7 @@ module.exports = {
                 "developer-guide/plugin/api-reference/server/reverseproxy",
                 "developer-guide/plugin/api-reference/server/finder-for-theme",
                 "developer-guide/plugin/api-reference/server/template-for-theme",
+                "developer-guide/plugin/api-reference/server/websocket",
                 {
                   type: "category",
                   label: "扩展点",
@@ -224,6 +225,8 @@ module.exports = {
                     "developer-guide/plugin/api-reference/ui/extension-points/theme-list-item-operation-create",
                     "developer-guide/plugin/api-reference/ui/extension-points/plugin-list-item-field-create",
                     "developer-guide/plugin/api-reference/ui/extension-points/post-list-item-field-create",
+                    "developer-guide/plugin/api-reference/ui/extension-points/user-detail-tabs-create",
+                    "developer-guide/plugin/api-reference/ui/extension-points/uc-user-profile-tabs-create",
                   ],
                 },
                 {
