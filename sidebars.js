@@ -183,6 +183,7 @@ module.exports = {
                 "developer-guide/plugin/api-reference/server/finder-for-theme",
                 "developer-guide/plugin/api-reference/server/template-for-theme",
                 "developer-guide/plugin/api-reference/server/websocket",
+                "developer-guide/plugin/api-reference/server/login-handler-enhancer",
                 {
                   type: "category",
                   label: "扩展点",
@@ -198,6 +199,7 @@ module.exports = {
                     "developer-guide/plugin/api-reference/server/extension-points/comment-widget",
                     "developer-guide/plugin/api-reference/server/extension-points/notifier",
                     "developer-guide/plugin/api-reference/server/extension-points/template-head-processor",
+                    "developer-guide/plugin/api-reference/server/extension-points/template-footer-processor",
                     "developer-guide/plugin/api-reference/server/extension-points/post-content",
                     "developer-guide/plugin/api-reference/server/extension-points/singlepage-content",
                     "developer-guide/plugin/api-reference/server/extension-points/username-password-authentication-manager",
