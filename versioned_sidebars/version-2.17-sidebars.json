@@ -23,6 +23,7 @@
             "getting-started/install/helm",
             "getting-started/install/podman",
             "getting-started/install/jar-file",
+            "getting-started/install/offline",
             {
               "type": "category",
               "label": "云平台",
@@ -244,6 +245,7 @@
                     "developer-guide/plugin/api-reference/ui/components/attachment-selector-modal",
                     "developer-guide/plugin/api-reference/ui/components/has-permission",
                     "developer-guide/plugin/api-reference/ui/components/search-input",
+                    "developer-guide/plugin/api-reference/ui/components/plugin-detail-modal",
                     "developer-guide/plugin/api-reference/ui/components/v-codemirror",
                     "developer-guide/plugin/api-reference/ui/components/v-tooltip",
                     "developer-guide/plugin/api-reference/ui/components/v-permission"
