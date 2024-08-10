@@ -115,7 +115,7 @@ postFinder.listAll();
 
 ### 返回值
 
-List<[#ListedPostVo](#listedpostvo)>
+List\<[#ListedPostVo](#listedpostvo)\>
 
 ### 示例
 
@@ -144,7 +144,7 @@ postFinder.list(page, size);
 
 ### 返回值
 
-[#ListResult<ListedPostVo\>](#listresultlistedpostvo)
+[#ListResult\<ListedPostVo\>](#listresultlistedpostvo)
 
 ### 示例
 
@@ -174,7 +174,7 @@ postFinder.listByCategory(page, size, categoryName);
 
 ### 返回值
 
-[#ListResult<ListedPostVo\>](#listresultlistedpostvo)
+[#ListResult\<ListedPostVo\>](#listresultlistedpostvo)
 
 ### 示例
 
@@ -204,12 +204,42 @@ postFinder.listByTag(page, size, tag);
 
 ### 返回值
 
-[#ListResult<ListedPostVo\>](#listresultlistedpostvo)
+[#ListResult\<ListedPostVo\>](#listresultlistedpostvo)
 
 ### 示例
 
 ```html
 <ul th:with="posts = ${postFinder.listByTag(1,10,'tag-foo')}">
+  <li th:each="post : ${posts.items}">
+    <a th:href="@{${post.status.permalink}}" th:text="${post.spec.title}"></a>
+  </li>
+</ul>
+```
+
+## listByOwner(page,size,owner)
+
+```js
+postFinder.listByOwner(page, size, owner);
+```
+
+### 描述
+
+根据创建者用户名和分页参数获取文章列表。
+
+### 参数
+
+1. `page:int` - 分页页码，从 1 开始
+2. `size:int` - 分页条数
+3. `owner:string` - 创建者用户名 `name`
+
+### 返回值
+
+[#ListResult\<ListedPostVo\>](#listresultlistedpostvo)
+
+### 示例
+
+```html
+<ul th:with="posts = ${postFinder.listByOwner(1,10,'admin')}">
   <li th:each="post : ${posts.items}">
     <a th:href="@{${post.status.permalink}}" th:text="${post.spec.title}"></a>
   </li>
@@ -233,7 +263,7 @@ postFinder.archives(page, size);
 
 ### 返回值
 
-[#ListResult<PostArchiveVo\>](#listresultpostarchivevo)
+[#ListResult\<PostArchiveVo\>](#listresultpostarchivevo)
 
 ### 示例
 
@@ -271,7 +301,7 @@ postFinder.archives(page, size, year);
 
 ### 返回值
 
-[#ListResult<PostArchiveVo\>](#listresultpostarchivevo)
+[#ListResult\<PostArchiveVo\>](#listresultpostarchivevo)
 
 ### 示例
 
@@ -310,7 +340,7 @@ postFinder.archives(page, size, year, month);
 
 ### 返回值
 
-[#ListResult<PostArchiveVo\>](#listresultpostarchivevo)
+[#ListResult\<PostArchiveVo\>](#listresultpostarchivevo)
 
 ### 示例
 
@@ -371,13 +401,13 @@ postFinder.archives(page, size, year, month);
 
 ### ListedPostVo
 
-<ListedPostVo />
+\<ListedPostVo \/\>
 
 - [#CategoryVo](#categoryvo)
 - [#TagVo](#tagvo)
 - [#ContributorVo](#contributorvo)
 
-### ListResult<ListedPostVo\>
+### ListResult\<ListedPostVo\>
 
 ```json title="ListResult<ListedPostVo>"
 {
@@ -411,7 +441,7 @@ postFinder.archives(page, size, year, month);
 
 - [#ListedPostVo](#listedpostvo)
 
-### ListResult<PostArchiveVo\>
+### ListResult\<PostArchiveVo\>
 
 ```json title="ListResult<PostArchiveVo>"
 {
