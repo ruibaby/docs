@@ -39,13 +39,17 @@ module.exports = {
             "getting-started/install/podman",
             "getting-started/install/jar-file",
             "getting-started/install/offline",
+            "getting-started/install/config",
             {
               type: "category",
               label: "云平台",
               link: {
                 type: "generated-index",
               },
-              items: ["getting-started/install/cloud/tencent-cloud-lighthouse"],
+              items: [
+                "getting-started/install/cloud/tencent-cloud-lighthouse",
+                "getting-started/install/cloud/alibaba-cloud-computenest"
+              ],
             },
             {
               type: "category",
@@ -112,6 +116,7 @@ module.exports = {
         "developer-guide/core/prepare",
         "developer-guide/core/run",
         "developer-guide/core/build",
+        "developer-guide/core/framework",
         // "developer-guide/core/code-style",
       ],
     },
@@ -133,7 +138,6 @@ module.exports = {
             type: "generated-index",
           },
           items: [
-            "developer-guide/plugin/basics/framework",
             "developer-guide/plugin/basics/structure",
             "developer-guide/plugin/basics/manifest",
             "developer-guide/plugin/basics/devtools",
@@ -177,7 +181,6 @@ module.exports = {
               items: [
                 "developer-guide/plugin/api-reference/server/extension",
                 "developer-guide/plugin/api-reference/server/reconciler",
-                "developer-guide/plugin/api-reference/server/role-template",
                 "developer-guide/plugin/api-reference/server/extension-client",
                 "developer-guide/plugin/api-reference/server/setting-fetcher",
                 "developer-guide/plugin/api-reference/server/reverseproxy",
@@ -186,27 +189,6 @@ module.exports = {
                 "developer-guide/plugin/api-reference/server/websocket",
                 "developer-guide/plugin/api-reference/server/login-handler-enhancer",
                 "developer-guide/plugin/api-reference/server/extension-getter",
-                {
-                  type: "category",
-                  label: "扩展点",
-                  link: {
-                    type: "doc",
-                    id: "developer-guide/plugin/api-reference/server/extension-points/index",
-                  },
-                  items: [
-                    "developer-guide/plugin/api-reference/server/extension-points/additional-webfilter",
-                    "developer-guide/plugin/api-reference/server/extension-points/authentication-webfilter",
-                    "developer-guide/plugin/api-reference/server/extension-points/attachment",
-                    "developer-guide/plugin/api-reference/server/extension-points/comment-subject",
-                    "developer-guide/plugin/api-reference/server/extension-points/comment-widget",
-                    "developer-guide/plugin/api-reference/server/extension-points/notifier",
-                    "developer-guide/plugin/api-reference/server/extension-points/template-head-processor",
-                    "developer-guide/plugin/api-reference/server/extension-points/template-footer-processor",
-                    "developer-guide/plugin/api-reference/server/extension-points/post-content",
-                    "developer-guide/plugin/api-reference/server/extension-points/singlepage-content",
-                    "developer-guide/plugin/api-reference/server/extension-points/username-password-authentication-manager",
-                  ],
-                },
               ],
             },
             {
@@ -218,35 +200,6 @@ module.exports = {
               items: [
                 "developer-guide/plugin/api-reference/ui/route",
                 "developer-guide/plugin/api-reference/ui/api-request",
-                {
-                  type: "category",
-                  label: "扩展点",
-                  link: {
-                    type: "doc",
-                    id: "developer-guide/plugin/api-reference/ui/extension-points/index",
-                  },
-                  items: [
-                    "developer-guide/plugin/api-reference/ui/extension-points/attachment-selector-create",
-                    "developer-guide/plugin/api-reference/ui/extension-points/editor-create",
-                    "developer-guide/plugin/api-reference/ui/extension-points/plugin-self-tabs-create",
-                    "developer-guide/plugin/api-reference/ui/extension-points/default-editor-extension-create",
-                    "developer-guide/plugin/api-reference/ui/extension-points/comment-subject-ref-create",
-                    "developer-guide/plugin/api-reference/ui/extension-points/backup-tabs-create",
-                    "developer-guide/plugin/api-reference/ui/extension-points/plugin-installation-tabs-create",
-                    "developer-guide/plugin/api-reference/ui/extension-points/theme-list-tabs-create",
-                    "developer-guide/plugin/api-reference/ui/extension-points/post-list-item-operation-create",
-                    "developer-guide/plugin/api-reference/ui/extension-points/comment-list-item-operation-create",
-                    "developer-guide/plugin/api-reference/ui/extension-points/reply-list-item-operation-create",
-                    "developer-guide/plugin/api-reference/ui/extension-points/plugin-list-item-operation-create",
-                    "developer-guide/plugin/api-reference/ui/extension-points/backup-list-item-operation-create",
-                    "developer-guide/plugin/api-reference/ui/extension-points/attachment-list-item-operation-create",
-                    "developer-guide/plugin/api-reference/ui/extension-points/theme-list-item-operation-create",
-                    "developer-guide/plugin/api-reference/ui/extension-points/plugin-list-item-field-create",
-                    "developer-guide/plugin/api-reference/ui/extension-points/post-list-item-field-create",
-                    "developer-guide/plugin/api-reference/ui/extension-points/user-detail-tabs-create",
-                    "developer-guide/plugin/api-reference/ui/extension-points/uc-user-profile-tabs-create",
-                  ],
-                },
                 {
                   type: "category",
                   label: "组件",
@@ -272,6 +225,79 @@ module.exports = {
               ],
             },
           ],
+        },
+        {
+          type: "category",
+          label: "扩展点和定制化",
+          link: {
+            type: "doc",
+            id: "developer-guide/plugin/extension-points/server/index",
+          },
+          items: [
+            {
+              type: "category",
+              label: "服务端",
+              link: {
+                type: "doc",
+                id: "developer-guide/plugin/extension-points/server/index",
+              },
+              items: [
+                "developer-guide/plugin/extension-points/server/additional-webfilter",
+                "developer-guide/plugin/extension-points/server/authentication-webfilter",
+                "developer-guide/plugin/extension-points/server/attachment",
+                "developer-guide/plugin/extension-points/server/comment-subject",
+                "developer-guide/plugin/extension-points/server/comment-widget",
+                "developer-guide/plugin/extension-points/server/notifier",
+                "developer-guide/plugin/extension-points/server/template-head-processor",
+                "developer-guide/plugin/extension-points/server/template-footer-processor",
+                "developer-guide/plugin/extension-points/server/post-content",
+                "developer-guide/plugin/extension-points/server/singlepage-content",
+                "developer-guide/plugin/extension-points/server/username-password-authentication-manager",
+              ],
+            },
+            {
+              type: "category",
+              label: "UI",
+              link: {
+                type: "doc",
+                id: "developer-guide/plugin/extension-points/ui/index",
+              },
+              items: [
+                "developer-guide/plugin/extension-points/ui/attachment-selector-create",
+                "developer-guide/plugin/extension-points/ui/editor-create",
+                "developer-guide/plugin/extension-points/ui/plugin-self-tabs-create",
+                "developer-guide/plugin/extension-points/ui/default-editor-extension-create",
+                "developer-guide/plugin/extension-points/ui/comment-subject-ref-create",
+                "developer-guide/plugin/extension-points/ui/backup-tabs-create",
+                "developer-guide/plugin/extension-points/ui/plugin-installation-tabs-create",
+                "developer-guide/plugin/extension-points/ui/theme-list-tabs-create",
+                "developer-guide/plugin/extension-points/ui/post-list-item-operation-create",
+                "developer-guide/plugin/extension-points/ui/comment-list-item-operation-create",
+                "developer-guide/plugin/extension-points/ui/reply-list-item-operation-create",
+                "developer-guide/plugin/extension-points/ui/plugin-list-item-operation-create",
+                "developer-guide/plugin/extension-points/ui/backup-list-item-operation-create",
+                "developer-guide/plugin/extension-points/ui/attachment-list-item-operation-create",
+                "developer-guide/plugin/extension-points/ui/theme-list-item-operation-create",
+                "developer-guide/plugin/extension-points/ui/plugin-list-item-field-create",
+                "developer-guide/plugin/extension-points/ui/post-list-item-field-create",
+                "developer-guide/plugin/extension-points/ui/user-detail-tabs-create",
+                "developer-guide/plugin/extension-points/ui/uc-user-profile-tabs-create",
+              ]
+            },
+          ]
+        },
+        {
+          type: "category",
+          label: "安全和权限管理",
+          link: {
+            type: "doc",
+            id: "developer-guide/plugin/security/role-template",
+          },
+          items: [
+            "developer-guide/plugin/security/rbac",
+            "developer-guide/plugin/security/role-template",
+            "developer-guide/plugin/security/ui-permission",
+          ]
         },
         {
           type: "category",

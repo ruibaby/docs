@@ -28,7 +28,7 @@ const config = {
           routeBasePath: "/",
           showLastUpdateTime: true,
           showLastUpdateAuthor: true,
-          lastVersion: "2.19",
+          lastVersion: "2.20",
           versions: {
             current: {
               label: "2.20.0-SNAPSHOT",
@@ -43,17 +43,7 @@ const config = {
         sitemap: {
           changefreq: "weekly",
           priority: 0.5,
-          ignorePatterns: [
-            "/2.10/**",
-            "/2.11/**",
-            "/2.12/**",
-            "/2.13/**",
-            "/2.14/**",
-            "/2.15/**",
-            "/2.16/**",
-            "/2.17/**",
-            "/2.18/**",
-          ],
+          ignorePatterns: ["/2.16/**", "/2.17/**", "/2.18/**", "/2.19/**"],
         },
         googleAnalytics: {
           trackingID: "UA-110780416-7",
@@ -77,7 +67,7 @@ const config = {
         title: "Halo 文档",
         logo: {
           alt: "Halo Logo",
-          src: "https://halo.run/upload/2021/03/Adaptive256-463ca9b92e2d40268431018c07735842.png",
+          src: "https://www.halo.run/upload/2021/03/Adaptive256-463ca9b92e2d40268431018c07735842.png",
         },
         items: [
           {
@@ -119,7 +109,7 @@ const config = {
             ],
           },
           {
-            href: "https://halo.run",
+            href: "https://www.halo.run",
             label: "官网",
             position: "right",
           },
@@ -239,12 +229,6 @@ const config = {
         createRedirects(existingPath) {
           if (existingPath.startsWith("/2.20.0-SNAPSHOT/")) {
             return [
-              existingPath.replace("/2.20.0-SNAPSHOT/", "/2.10.0-SNAPSHOT/"),
-              existingPath.replace("/2.20.0-SNAPSHOT/", "/2.11.0-SNAPSHOT/"),
-              existingPath.replace("/2.20.0-SNAPSHOT/", "/2.12.0-SNAPSHOT/"),
-              existingPath.replace("/2.20.0-SNAPSHOT/", "/2.13.0-SNAPSHOT/"),
-              existingPath.replace("/2.20.0-SNAPSHOT/", "/2.14.0-SNAPSHOT/"),
-              existingPath.replace("/2.20.0-SNAPSHOT/", "/2.15.0-SNAPSHOT/"),
               existingPath.replace("/2.20.0-SNAPSHOT/", "/2.16.0-SNAPSHOT/"),
               existingPath.replace("/2.20.0-SNAPSHOT/", "/2.17.0-SNAPSHOT/"),
               existingPath.replace("/2.20.0-SNAPSHOT/", "/2.18.0-SNAPSHOT/"),
