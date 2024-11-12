@@ -47,6 +47,7 @@ module.exports = {
                 type: "generated-index",
               },
               items: [
+                "getting-started/install/cloud/alibaba-cloud-market",
                 "getting-started/install/cloud/tencent-cloud-lighthouse",
                 "getting-started/install/cloud/alibaba-cloud-computenest"
               ],
@@ -84,6 +85,7 @@ module.exports = {
         "user-guide/posts",
         "user-guide/pages",
         "user-guide/attachments",
+        "user-guide/menus",
         "user-guide/themes",
         "user-guide/plugins",
         "user-guide/app-store",
@@ -184,6 +186,7 @@ module.exports = {
                 "developer-guide/plugin/api-reference/server/extension-client",
                 "developer-guide/plugin/api-reference/server/setting-fetcher",
                 "developer-guide/plugin/api-reference/server/reverseproxy",
+                "developer-guide/plugin/api-reference/server/notification",
                 "developer-guide/plugin/api-reference/server/finder-for-theme",
                 "developer-guide/plugin/api-reference/server/template-for-theme",
                 "developer-guide/plugin/api-reference/server/websocket",
@@ -288,6 +291,17 @@ module.exports = {
         },
         {
           type: "category",
+          label: "与其他插件交互",
+          link: {
+            type: "doc",
+            id: "developer-guide/plugin/interaction/dependency",
+          },
+          items: [
+            "developer-guide/plugin/interaction/dependency",
+          ]
+        },
+        {
+          type: "category",
           label: "安全和权限管理",
           link: {
             type: "doc",
@@ -320,13 +334,12 @@ module.exports = {
         "developer-guide/theme/prepare",
         "developer-guide/theme/config",
         "developer-guide/theme/structure",
-        "developer-guide/theme/template-route-mapping",
         "developer-guide/theme/static-resources",
         "developer-guide/theme/settings",
         "developer-guide/theme/annotations",
         {
           type: "category",
-          label: "模板变量",
+          label: "模板编写",
           link: {
             type: "doc",
             id: "developer-guide/theme/template-variables",
@@ -341,6 +354,7 @@ module.exports = {
             "developer-guide/theme/template-variables/categories",
             "developer-guide/theme/template-variables/category",
             "developer-guide/theme/template-variables/author",
+            "developer-guide/theme/template-variables/auth",
             "developer-guide/theme/template-variables/error",
           ],
         },

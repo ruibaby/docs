@@ -15,6 +15,14 @@ const config = {
   },
   organizationName: "halo-dev", // Usually your GitHub org/user name.
   projectName: "halo", // Usually your repo name.
+  markdown: {
+    mermaid: true,
+  },
+  themes: ['@docusaurus/theme-mermaid'],
+
+  future: {
+    experimental_faster: true,
+  },
 
   presets: [
     [
@@ -100,7 +108,7 @@ const config = {
                 ([versionName, versionUrl]) => ({
                   label: versionName,
                   href: versionUrl,
-                })
+                }),
               ),
               {
                 to: "/versions",
@@ -189,7 +197,7 @@ const config = {
       prism: {
         theme: darkCodeTheme,
         darkTheme: darkCodeTheme,
-        additionalLanguages: ["java"],
+        additionalLanguages: ["java", "json", "sql"],
       },
       zoom: {
         selector: ".markdown :not(a) > img",
@@ -240,23 +248,6 @@ const config = {
       },
     ],
   ],
-  webpack: {
-    jsLoader: (isServer) => ({
-      loader: require.resolve("swc-loader"),
-      options: {
-        jsc: {
-          parser: {
-            syntax: "typescript",
-            tsx: true,
-          },
-          target: "es2017",
-        },
-        module: {
-          type: isServer ? "commonjs" : "es6",
-        },
-      },
-    }),
-  },
   scripts: [
     {
       src: "https://analytics.halo.run/script.js",

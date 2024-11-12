@@ -131,7 +131,7 @@ rules:
 角色定义依赖关系适合于定义角色模板时复用 `rules` 或者用户创建角色时绑定其他角色，但是如果想要将一个角色的权限合并到另一个已有的角色中（如 Halo 提供的），这种情况下角色依赖关系就无法满足需求了。
 例如，当插件开发者想要将自己插件的角色权限合合并到 Halo 的角色中时，无法修改 Halo 的角色定义，这时可以通过聚合角色来实现。
 
-聚合角色通过 `rbac.authorization.halo.run/aggregate-to-{role-name}` 的 `annotations` 来声明，其中的 `{role-name}` 占位符表示要聚合到的角色名。
+聚合角色通过 `rbac.authorization.halo.run/aggregate-to-{role-name}` 的 `labels` 来声明，其中的 `{role-name}` 占位符表示要聚合到的角色名。
 
 例如插件开发者想要将插件的某些 API 资源公开给所有人访问即不需要授权，可以通过将角色聚合到 `anonymous` 角色来实现。
 
@@ -139,10 +139,9 @@ rules:
 apiVersion: v1alpha1
 kind: Role
 metadata:
-  name: template-moment-anonymous-resrouces
+  name: template-moment-anonymous-resources
   labels:
     halo.run/role-template: "true"
-  annotations:
     rbac.authorization.halo.run/aggregate-to-anonymous: "true"
 rules:
   - apiGroups: ["api.moment.halo.run"]
@@ -150,7 +149,7 @@ rules:
     verbs: ["get", "list"]
 ```
 
-上述配置将 `template-moment-anonymous-resrouces` 角色聚合到 `anonymous` 角色中，用户无需登录即可访问 `api.moment.halo.run` 下的 `moments` 资源。
+上述配置将 `template-moment-anonymous-resources` 角色聚合到 `anonymous` 角色中，用户无需登录即可访问 `api.moment.halo.run` 下的 `moments` 资源。
 
 `rbac.authorization.halo.run/aggregate-to-editor` 表示将 `role-template-view-categories` 角色聚合到 `editor` 角色中，这样所有拥有 `editor` 角色的用户都会拥有 `role-template-view-categories` 角色的权限。
 
@@ -166,13 +165,12 @@ Halo 提供了隐藏角色模板的功能，隐藏的角色模板不会在用户
 apiVersion: v1alpha1
 kind: Role
 metadata:
-  name: template-moment-anonymous-resrouces
+  name: template-moment-anonymous-resources
   labels:
     # 声明为角色模板
     halo.run/role-template: "true"
     # 声明为隐藏
     halo.run/hidden: "true"
-  annotations:
     # 聚合到 anonymous 角色
     rbac.authorization.halo.run/aggregate-to-anonymous: "true"
 rules:
