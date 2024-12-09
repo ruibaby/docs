@@ -298,6 +298,8 @@ module.exports = {
           },
           items: [
             "developer-guide/plugin/interaction/dependency",
+            "developer-guide/plugin/interaction/shared-events",
+            "developer-guide/plugin/interaction/making-plugin-extensible",
           ]
         },
         {
